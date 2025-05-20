@@ -1,5 +1,5 @@
-using dotnet_aspire.Web;
-using dotnet_aspire.Web.Components;
+using Brys.Aspire.Web;
+using Brys.Aspire.Web.Components;
 
 var builder = WebApplication.CreateBuilder(args);
 

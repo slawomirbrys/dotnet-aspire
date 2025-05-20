@@ -1,4 +1,4 @@
-namespace dotnet_aspire.Web;
+namespace Brys.Aspire.Web;
 
 public class WeatherApiClient(HttpClient httpClient)
 {
