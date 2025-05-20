@@ -1,4 +1,5 @@
 ﻿@page "/weather"
+@using Brys.Aspire.ApiService.Models
 @attribute [StreamRendering(true)]
 @attribute [OutputCache(Duration = 5)]
 
@@ -40,7 +41,7 @@ else
 }
 
 @code {
-    private WeatherForecast[]? forecasts;
+    private WeatherForecastDto[]? forecasts;
 
     protected override async Task OnInitializedAsync()
     {

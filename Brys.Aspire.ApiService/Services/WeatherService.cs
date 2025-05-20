@@ -1,4 +1,6 @@
-﻿namespace Brys.Aspire.ApiService.Services;
+﻿using Brys.Aspire.ApiService.Models;
+
+namespace Brys.Aspire.ApiService.Services;
 
 public class WeatherService
 {
@@ -14,10 +16,10 @@ public class WeatherService
         _logger = logger;
     }
 
-    public IEnumerable<WeatherForecast> GetWeatherForecast()
+    public IEnumerable<WeatherForecastDto> GetWeatherForecast()
     {
         var forecast = Enumerable.Range(1, 5).Select(index =>
-                new WeatherForecast
+                new WeatherForecastDto
                 (
                     DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
                     Random.Shared.Next(-20, 55),
