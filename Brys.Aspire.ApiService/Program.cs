@@ -7,7 +7,15 @@ builder.AddServiceDefaults();
 
 // Add services to the container.
 builder.Services.AddProblemDetails();
-builder.Services.AddLogging();
+builder.Services.AddLogging(config =>
+{
+    config.AddSimpleConsole(options =>
+    {
+        options.IncludeScopes = true;
+        options.SingleLine = true;
+        options.TimestampFormat = "[yyyy-MM-dd HH:mm:ss] ";
+    });
+});
 
 // Own services
 builder.Services.AddSingleton<WeatherService>();

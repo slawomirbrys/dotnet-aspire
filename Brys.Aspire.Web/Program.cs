@@ -19,6 +19,16 @@ builder.Services.AddHttpClient<WeatherApiClient>(client =>
         client.BaseAddress = new("https+http://apiservice");
     });
 
+builder.Services.AddLogging(config =>
+{
+    config.AddSimpleConsole(options =>
+    {
+        options.IncludeScopes = true;
+        options.SingleLine = true;
+        options.TimestampFormat = "[yyyy-MM-dd HH:mm:ss] ";
+    });
+});
+
 var app = builder.Build();
 
 if (!app.Environment.IsDevelopment())
